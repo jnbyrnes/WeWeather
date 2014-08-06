@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <% if @zip_code %>
+    <% if @current_weather %>
+      <span id="hero_title"><%= @current_weather.location_name  %></span>
+      <p></p>
+      <p>Forecast ZipCode: <%= @current_weather.zip_code  %></p>
+      <p>Forecast Time: <%= @current_weather.created_at.advance(:hours => -4).strftime('%m/%d/%Y %I:%M%p')  %></p>
+      <p>Forecast Temperature: <%= @current_weather.temp  %></p>
+      <p>Forecast Conditions: <%= @current_weather.conditions  %></p>
+      <p><%= image_tag  @current_weather.forecast_image %></p>
+    <% else %>
+      <span id="hero_title">An Error occurred processing that zip code. Please try again.</span>
+    <% end %>
+  <% else %>
+    <span id="hero_title">Please enter a zipcode to retrieve weather forecast.</span>
+  <% end %>
+</div>
+
+<hr>

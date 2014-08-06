@@ -1,0 +1,22 @@
+<div class="hero-unit">
+  <% if @zip_code %>
+    <% if @three_day_weather %>
+      <% (0..(@three_day_weather.days.count-1)).each do |i| %>
+        <span id="hero_title"><%= @three_day_weather.days[i]  %></span>
+        <p></p>
+        <p>Forecast ZipCode: <%= @three_day_weather.zip_code  %></p>
+        <p>Forecast Highs: <%= @three_day_weather.highs[i]  %></p>
+        <p>Forecast Lows: <%= @three_day_weather.lows[i]  %></p>
+        <p>Forecast Conditions: <%= @three_day_weather.conditions[i]  %></p>
+        <p><%= image_tag  @three_day_weather.forecast_images[i] %></p>
+        <hr>
+      <% end %>
+    <% else %>
+      <span id="hero_title">An Error occurred processing that zip code. Please try again.</span>
+    <% end %>
+  <% else %>
+    <span id="hero_title">Please enter a zipcode to retrieve weather forecast.</span>
+  <% end %>
+</div>
+
+<hr>
