@@ -9,6 +9,7 @@ The hourly forecast functionality was not able to be completed in the given time
 
 * App was built in ruby (1.9.3p125) and rails (3.2.11)
 * App utilized mongodb and mongoid
+* App utilized twitter bootstrap
 
 -------------------
 
